@@ -32,10 +32,9 @@ public final class BritishTimeSpeaker implements TimeSpeaker {
     if (m < 30) {
       String mins = (m == 1) ? "one" : WordUtils.number(m);
       return mins + " past " + WordUtils.hourAsTwelveHour(h);
-    } else {
-      int to = 60 - m;
-      String mins = (to == 1) ? "one" : WordUtils.number(to);
-      return mins + " to " + WordUtils.hourAsTwelveHour(h + 1);
     }
+    int to = 60 - m;
+    String mins = (to == 1) ? "one" : WordUtils.number(to);
+    return mins + " to " + WordUtils.hourAsTwelveHour(h + 1);
   }
 }

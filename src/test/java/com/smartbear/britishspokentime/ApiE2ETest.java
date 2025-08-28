@@ -30,7 +30,8 @@ class ApiE2ETest {
   // GET tests
   @ParameterizedTest
   @CsvFileSource(resources = "/british_test_data.csv", numLinesToSkip = 1)
-  void givenDigitalTime_whenCallSpeakEndpoint_thenReturnsBritishTime(String time, String expected) {
+  void givenDigitalTime_whenCallGetSpeakEndpoint_thenReturnsBritishTime(
+      String time, String expected) {
     ResponseEntity<SpeakResponse> res =
         client()
             .get()
@@ -54,7 +55,8 @@ class ApiE2ETest {
 
   @ParameterizedTest
   @CsvFileSource(resources = "/digital_test_data.csv", numLinesToSkip = 1)
-  void givenDigitalTime_whenCallSpeakEndpoint_thenReturnsDigitalTime(String time, String expected) {
+  void givenDigitalTime_whenCallGetSpeakEndpoint_thenReturnsDigitalTime(
+      String time, String expected) {
     ResponseEntity<SpeakResponse> res =
         client()
             .get()
