@@ -56,13 +56,13 @@ public final class WordUtils {
    *
    * <p>Accepts 0..24 to support cases like "quarter to" where 24 maps to 12.
    *
-   * @param hour24 hour in 24h space, 0..23
+   * @param hour24 hour in 24h space, 0..24
    * @return word for the 12h hour, e.g. 0->"twelve", 13->"one"
-   * @throws IllegalArgumentException if hour24 is outside 0..23
+   * @throws IllegalArgumentException if hour24 is outside 0..24
    */
   public static String hourAsTwelveHour(int hour24) {
-    if (hour24 < 0 || hour24 > 23) {
-      throw new IllegalArgumentException("Hour must be 0–23, was: " + hour24);
+    if (hour24 < 0 || hour24 > 24) {
+      throw new IllegalArgumentException("Hour must be 0–24, was: " + hour24);
     }
     int h = hour24 % 12;
     if (h == 0) h = 12;
