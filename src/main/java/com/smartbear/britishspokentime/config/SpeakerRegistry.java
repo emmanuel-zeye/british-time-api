@@ -9,9 +9,17 @@ import java.util.Map;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Spring configuration that wires available TimeSpeaker implementations into a typed registry map.
+ */
 @Configuration
 public class SpeakerRegistry {
 
+  /**
+   * Provides an immutable mapping from SpeakingStyle to its TimeSpeaker implementation.
+   *
+   * @return unmodifiable map of speakers keyed by their style
+   */
   @Bean
   public Map<SpeakingStyle, TimeSpeaker> speakers() {
     Map<SpeakingStyle, TimeSpeaker> map = new EnumMap<>(SpeakingStyle.class);

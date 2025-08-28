@@ -12,6 +12,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+/** Global exception handling for validation errors, producing RFC7807 ProblemDetail responses. */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
